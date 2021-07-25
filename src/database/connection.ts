@@ -1,9 +1,11 @@
 import { Pool } from 'pg';
 
-export default new Pool({
+const pool  = new Pool({
     user: 'admin',
-    host: 'db_postgres',
+    host: 'localhost',
     database: 'goomer-lista-rango',
     password: '123456',
     port: 5432
 })
+
+export { pool };
