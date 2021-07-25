@@ -10,10 +10,10 @@ class Tables {
             id UUID PRIMARY KEY DEFAULT gen_random_uuid(), 
             name varchar(256) NOT NULL,
             address varchar(256) NOT NULL,
-            hour_open_week TIME, 
-            hour_close_week TIME, 
-            hour_open_end_week TIME, 
-            hour_close_end_week TIME
+            hour_open_week TIME NOT NULL, 
+            hour_close_week TIME NOT NULL, 
+            hour_open_end_week TIME NOT NULL, 
+            hour_close_end_week TIME NOT NULL
         )
         `;
     
@@ -28,15 +28,13 @@ class Tables {
         )
         `;
     
-        pool.query(createTableRestaurante, (err, res)=>{
-            console.log(err, res);
+        pool.query(createTableRestaurante, (err)=>{
+            if(err) console.log(err)
         });
     
         pool.query(createTableProdutos, (err, res)=>{
-            console.log(err, res);
-            pool.end();
-        })
-    
+            if(err) console.log(err)
+        }) 
     }
 }
 

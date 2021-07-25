@@ -1,3 +1,4 @@
+require('dotenv').config();
 import express from "express";
 import { router } from "./routers/routes";
 import { Tables } from "./database/Tables";
@@ -12,4 +13,4 @@ tables.createTables();
 app.use(express.json());
 app.use(router);
 
-app.listen(3000, () => console.log("Server Running!"))
+app.listen(process.env.PORT)
