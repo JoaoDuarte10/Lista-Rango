@@ -27,6 +27,18 @@ class Tables {
             categoria varchar(256) NOT NULL
         )
         `;
+
+        const createTablePromocao = `
+        CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+    
+        CREATE TABLE IF NOT EXISTS promocoes (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            descricao varchar(256) NOT NULL,
+            preco float NOT NULL,
+            dia_inicio_promocao date NOT NULL,
+            dia_fim_promocao date NOT NULL,
+        )
+        `;
     
         pool.query(createTableRestaurante, (err)=>{
             if(err) console.log(err)
@@ -34,7 +46,11 @@ class Tables {
     
         pool.query(createTableProdutos, (err, res)=>{
             if(err) console.log(err)
-        }) 
+        });
+
+        pool.query(createTablePromocao, (err)=>{
+            if(err) console.log(err)
+        })
     }
 }
 
