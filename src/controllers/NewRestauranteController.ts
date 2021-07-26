@@ -6,13 +6,13 @@ class NewRestauranteController {
         const newRestauranteService = new NewRestauranteService();
         const { name, address, hour_open_week, hour_close_week, hour_open_end_week, hour_close_end_week } = req.body;
 
-        await newRestauranteService.execute({
+        const newRestaurante = await newRestauranteService.execute({
             name, address, hour_open_week, 
             hour_close_week, hour_open_end_week, 
             hour_close_end_week
         })
 
-        res.json(newRestauranteService);
+        res.json(newRestaurante);
     }
 }
 

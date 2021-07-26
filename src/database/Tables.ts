@@ -29,14 +29,12 @@ class Tables {
         `;
 
         const createTablePromocao = `
-        CREATE EXTENSION IF NOT EXISTS "pgcrypto";
-    
         CREATE TABLE IF NOT EXISTS promocoes (
-            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            id varchar PRIMARY KEY,
             descricao varchar(256) NOT NULL,
             preco float NOT NULL,
             dia_inicio_promocao date NOT NULL,
-            dia_fim_promocao date NOT NULL,
+            dia_fim_promocao date NOT NULL
         )
         `;
     

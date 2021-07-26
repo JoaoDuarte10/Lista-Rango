@@ -1,19 +1,19 @@
 import { Router } from 'express';
 
-import { ListAllRestaurantesController } from '../controllers/ListAllRestaurantesController';
-import { NewRestauranteController } from '../controllers/NewRestauranteController';
-import { ListRestauranteController } from '../controllers/ListRestauranteController';
-import { DeleteRestauranteController } from '../controllers/DeleteRestauranteController';
-import { UpdateRestauranteController } from '../controllers/UpdateRestauranteController';
+import { ListAllRestaurantesController } from './controllers/ListAllRestaurantesController';
+import { NewRestauranteController } from './controllers/NewRestauranteController';
+import { ListRestauranteController } from './controllers/ListRestauranteController';
+import { DeleteRestauranteController } from './controllers/DeleteRestauranteController';
+import { UpdateRestauranteController } from './controllers/UpdateRestauranteController';
 
-import { ListAllProdutosController } from '../controllers/ListAllProdutosController';
-import { NewProdutoController } from '../controllers/NewProdutoontroller';
-import { UpdateProdutoController } from '../controllers/UpdateProdutoController';
-import { DeleteProdutoController } from '../controllers/DeleteProdutoController';
+import { ListAllProdutosController } from './controllers/ListAllProdutosController';
+import { NewProdutoController } from './controllers/NewProdutoController';
+import { UpdateProdutoController } from './controllers/UpdateProdutoController';
+import { DeleteProdutoController } from './controllers/DeleteProdutoController';
 
-import { ListAllPromocoesController } from '../controllers/ListAllPromocoesController';
-import { NewPromocaoController } from '../controllers/NewPromocaoController';
-import { DeletePromocaoController } from '../controllers/DeletePromocaoController';
+import { ListAllPromocoesController } from './controllers/ListAllPromocoesController';
+import { NewPromocaoController } from './controllers/NewPromocaoController';
+import { DeletePromocaoController } from './controllers/DeletePromocaoController';
 
 const router = Router();
 
