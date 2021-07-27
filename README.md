@@ -24,7 +24,7 @@
 
     - docker-compose up -d
 
-    * O container irá rodar na porta 5433.
+    * O container irá rodar na porta 5432.
 
 ### Para dertruir o container:
 
