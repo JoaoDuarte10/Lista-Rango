@@ -12,8 +12,3 @@ services:
             POSTGRES_USER: 'admin'
             POSTGRES_PASSWORD: 123456
             POSTGRES_DB: 'goomer-lista-rango'
-    adminer:
-        image: adminer
-        restart: always
-        ports:
-            - 8080:8080

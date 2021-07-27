@@ -1,10 +1,11 @@
 import { Pool } from 'pg';
+require('dotenv').config();
 
 const pool  = new Pool({
-    user: 'admin',
-    host: 'localhost',
-    database: 'goomer-lista-rango',
-    password: '123456',
+    user: process.env.PGUSER,
+    host: process.env.PGHOST,
+    database: process.env.PGDATABASE,
+    password: process.env.PGPASSWORD,
     port: 5432
 })
 
