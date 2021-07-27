@@ -8,7 +8,7 @@ const app = express();
 const tables = new Tables();
 
 //Cria as tabelas necessárias para o projeto.
-tables.createTables();
+tables.createTabelas();
 
 app.use(express.json());
 app.use(router);

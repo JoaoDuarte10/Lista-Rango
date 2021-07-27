@@ -1,9 +1,10 @@
 import { pool } from './connection'
 
 class Tables {
-    async createTables(){
 
-        const createTableRestaurante = `
+    async createTabelas() {
+
+        const Tabelas = `
         CREATE EXTENSION IF NOT EXISTS "pgcrypto";
     
         CREATE TABLE IF NOT EXISTS restaurante (
@@ -14,14 +15,9 @@ class Tables {
             hour_close_week TIME NOT NULL, 
             hour_open_end_week TIME NOT NULL, 
             hour_close_end_week TIME NOT NULL
-        )
-        `;
-    
-        const createTableProdutos = `
-        CREATE EXTENSION IF NOT EXISTS "pgcrypto";
-    
+        );
         CREATE TABLE IF NOT EXISTS produtos (
-            id_produtos UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            id_produto UUID PRIMARY KEY DEFAULT gen_random_uuid(),
             restaurante_id UUID,
             name varchar(256) NOT NULL,
             preco float NOT NULL,
@@ -29,11 +25,8 @@ class Tables {
                 FOREIGN KEY(restaurante_id)
                     REFERENCES restaurante(id_restaurante)
                     ON DELETE SET NULL
-        )
-        `;
-
-        const createTablePromocao = `
-        CREATE TABLE IF NOT EXISTS promocoes (
+        );
+        CREATE TABLE IF NOT EXISTS promocao (
             id_promocao UUID PRIMARY KEY DEFAULT gen_random_uuid(),
             produto_id UUID,
             descricao varchar(256) NOT NULL,
@@ -41,20 +34,12 @@ class Tables {
             dia_inicio_promocao date NOT NULL,
             dia_fim_promocao date NOT NULL,
                 FOREIGN KEY(produto_id)
-                REFERENCES produtos(id_produtos)
+                REFERENCES produtos(id_produto)
                 ON DELETE SET NULL
-        )
+        );
         `;
-    
-        pool.query(createTableRestaurante, (err)=>{
-            if(err) console.log(err)
-        });
-    
-        pool.query(createTableProdutos, (err)=>{
-            if(err) console.log(err)
-        });
 
-        pool.query(createTablePromocao, (err)=>{
+        pool.query(Tabelas, (err)=>{
             if(err) console.log(err)
         })
     }

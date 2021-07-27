@@ -3,7 +3,8 @@ import { UpdateRestauranteService } from '../services/UpdateRestauranteService'
 
 class UpdateRestauranteController {
     async handle(req: Request, res: Response) {
-        const {name, address, hour_open_week, hour_close_week, hour_open_end_week, hour_close_end_week, id} = req.body;
+        const  { id }  = req.params;
+        const {name, address, hour_open_week, hour_close_week, hour_open_end_week, hour_close_end_week} = req.body;
 
         const updateRestauranteService = new UpdateRestauranteService();
 
@@ -13,7 +14,7 @@ class UpdateRestauranteController {
             hour_close_end_week, id
         })
 
-        res.json(updateRestaurante)
+        if(updateRestaurante) res.json({"message": "Restaurante atualizado com sucesso!"})
     }
 }
 

@@ -34,15 +34,15 @@ const deletePromocaoController = new DeletePromocaoController();
 
 router.get('/all-restaurantes', listAllRestauranteController.handle)
 router.get('/restaurante/:id', listRestauranteController.handle)
-router.get('/all-produtos', listAllProdutosController.handle)
+router.get('/produtos/:restaurante_id', listAllProdutosController.handle)
 router.get('/all-promocoes', listAllPromocoesController.handle)
 
 router.post('/new-restaurante', newRestauranteController.handle)
 router.post('/new-produto', newProdutoController.handle)
-router.post('new-promocao', newPromocaoController.handle)
+router.post('/new-promocao', newPromocaoController.handle)
 
-router.put('/update-restaurante', updateRestauranteController.handle)
-router.put('/update-produto', updateProdutoController.handle)
+router.put('/update-restaurante/:id', updateRestauranteController.handle)
+router.put('/update-produto/:id', updateProdutoController.handle)
 
 router.delete('/delete-restaurante', deleteRestauranteController.handle)
 router.delete('/delete-produto', deleteProdutoController.handle)

@@ -9,7 +9,7 @@ class DeleteRestauranteController {
 
         const deleteRestaurante = await deleteRestauranteService.execute(id);
 
-        res.json(deleteRestaurante);
+        if(deleteRestaurante) res.json({"message": "Restaurante deletado com sucesso!"});
     }
 }
 

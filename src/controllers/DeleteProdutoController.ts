@@ -9,7 +9,7 @@ class DeleteProdutoController {
 
         const deleteProdutos = await deleteProdutosService.execute(id);
 
-        res.json(deleteProdutos)
+        if(deleteProdutos) res.json({"message": "Produto deletado com sucesso!"})
     }
 }
 

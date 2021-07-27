@@ -10,10 +10,9 @@ interface IProduto {
 class UpdateProdutoService {
     async execute({name, preco, categoria, id}: IProduto) {
         const sqlProduto = {
-            text: `UPDATE produtos SET name=$1, preco=$2, categoria=$3 WHERE id=$4`,
+            text: `UPDATE produtos SET name=$1, preco=$2, categoria=$3 WHERE id_produtos=$4`,
             values: [name, preco, categoria, id]
         }
-
         const { rows } = await pool.query(sqlProduto);
 
         return rows

@@ -24,14 +24,13 @@ class UpdateRestauranteService {
             hour_close_week=$4, 
             hour_open_end_week=$5, 
             hour_close_end_week=$6
-            WHERE id=$7`,
+            WHERE id_restaurante=$7`,
             values: [
                 name, address, hour_open_week, 
                 hour_close_week, hour_open_end_week, 
                 hour_close_end_week, id
             ]
         }
-
         const { rows } = await pool.query(sqlRestaurante)
 
         return rows;

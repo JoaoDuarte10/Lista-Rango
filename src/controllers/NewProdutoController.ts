@@ -3,13 +3,13 @@ import { NewProdutoService } from '../services/NewProdutoService'
 
 class NewProdutoController {
     async handle(req: Request, res: Response) {
-        const { name, preco, categoria } = req.body;
+        const { restaurante_id, name, preco, categoria } = req.body;
 
         const newProdutoService = new NewProdutoService();
 
-        const newProduto = await newProdutoService.execute({name, preco, categoria});
+        const newProduto = await newProdutoService.execute({restaurante_id, name, preco, categoria});
 
-        res.json(newProduto)
+        if(newProduto) res.json({"message": "Produto salvo com sucesso!"})
     }
 }
 

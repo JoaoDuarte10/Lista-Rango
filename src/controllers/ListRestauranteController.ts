@@ -3,7 +3,7 @@ import { ListRestauranteService } from '../services/ListRestauranteService'
 
 class ListRestauranteController {
     async handle(req: Request, res: Response) {
-        const  {id}  = req.params;
+        const  { id }  = req.params;
 
         const listRestauranteService = new ListRestauranteService();
 
